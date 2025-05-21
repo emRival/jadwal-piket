@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jadwal Kebersihan Asrama Futuristik</title>
+    <title>Jadwal Kebersihan Asrama Bawah</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -1118,12 +1118,7 @@
         </div>
       </section>
 
-      <!-- Tombol Unduh -->
-      <div class="text-center mb-8">
-        <button id="downloadBtn" class="download-btn">
-          <i class="fas fa-download"></i> Unduh Jadwal
-        </button>
-      </div>
+
 
       <!-- Footer -->
       <footer class="text-center py-8 border-t border-gray-200">
@@ -1181,27 +1176,6 @@
           });
         }
 
-        // Download functionality
-        document
-          .getElementById("downloadBtn")
-          .addEventListener("click", function () {
-            // Create a data URL of the HTML content
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: "text/html" });
-            const url = URL.createObjectURL(blob);
-
-            // Create a download link
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "jadwal_kebersihan_asrama.html";
-            document.body.appendChild(a);
-            a.click();
-
-            // Clean up
-            setTimeout(() => {
-              document.body.removeChild(a);
-              URL.revokeObjectURL(url);
-            }, 100);
           });
       });
     </script>
